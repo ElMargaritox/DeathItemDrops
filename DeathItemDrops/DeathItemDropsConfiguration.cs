@@ -5,12 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace DeathItemDrops
 {
     public class DeathItemDropsConfiguration : IRocketPluginConfiguration
     {
         public int Interval;
+        [XmlArrayItem(ElementName = "Items")]
         public List<Item> Items; 
         public void LoadDefaults()
         {
